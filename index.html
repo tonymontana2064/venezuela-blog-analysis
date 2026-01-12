@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Capture of Nicolás Maduro: A Turning Point | Geopolitical Analysis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         :root {
@@ -29,6 +29,11 @@
             background-color: #f9f9f9;
             color: var(--text);
             line-height: 1.6;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        h1, h2, h3, h4, .logo {
+            font-family: 'Montserrat', sans-serif;
         }
         
         a {
@@ -176,46 +181,77 @@
             font-size: 1.2rem;
         }
         
-        /* Sidebar */
-        .sidebar {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            height: fit-content;
+        /* New: Trump Announcement Box */
+        .trump-announcement {
+            background-color: #fff8f8;
+            border-left: 4px solid #c53030;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+            border-top: 1px solid #fed7d7;
+            border-right: 1px solid #fed7d7;
+            border-bottom: 1px solid #fed7d7;
         }
         
-        .sidebar-section {
-            margin-bottom: 30px;
-        }
-        
-        .sidebar-section h3 {
-            color: var(--primary);
+        .trump-announcement h4 {
+            color: #c53030;
+            margin-bottom: 10px;
             font-size: 1.3rem;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .trump-announcement h4 i {
+            font-size: 1.5rem;
+        }
+        
+        .announcement-source {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .data-table th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            font-weight: 600;
+            padding: 12px 15px;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
             border-bottom: 1px solid var(--border);
         }
         
-        .timeline-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed var(--border);
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
         }
         
-        .timeline-date {
+        .data-table tr:hover {
+            background-color: #e6f7ff;
+        }
+        
+        .currency-high {
+            color: #2e7d32;
             font-weight: 600;
-            color: var(--secondary);
         }
         
-        .tag {
-            display: inline-block;
-            background-color: #e2e8f0;
-            padding: 5px 12px;
-            border-radius: 20px;
-            margin-right: 8px;
-            margin-bottom: 10px;
-            font-size: 0.85rem;
+        .currency-low {
+            color: #c62828;
+            font-weight: 600;
         }
         
         /* Chart/Data Visualization */
@@ -266,6 +302,110 @@
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--primary);
+        }
+        
+        /* Trade Partners Visualization */
+        .trade-partners {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .trade-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 4px solid;
+        }
+        
+        .trade-card.china {
+            border-color: #de2910;
+        }
+        
+        .trade-card.russia {
+            border-color: #0033a0;
+        }
+        
+        .trade-card.iran {
+            border-color: #239f40;
+        }
+        
+        .trade-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .trade-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .trade-currency {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        /* Benefits and Challenges Lists */
+        .benefits-list, .challenges-list {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .benefits-list h4, .challenges-list h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .benefits-list h4 i {
+            color: #2e7d32;
+        }
+        
+        .challenges-list h4 i {
+            color: #c53030;
+        }
+        
+        .benefits-list ul, .challenges-list ul {
+            margin-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            position: relative;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: #2e7d32;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .challenges-list li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            position: relative;
+        }
+        
+        .challenges-list li:before {
+            content: "⚠";
+            color: #c53030;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
         }
         
         /* References */
@@ -354,6 +494,10 @@
             .hero h1 {
                 font-size: 2.2rem;
             }
+            
+            .trade-partners {
+                justify-content: center;
+            }
         }
         
         @media (max-width: 768px) {
@@ -405,6 +549,11 @@
                 text-align: left;
                 color: white;
             }
+            
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
@@ -449,27 +598,62 @@
                 
                 <div class="highlight-box">
                     <h4>Key Announcement</h4>
-                    <p>President Trump announced that the US would temporarily "run" Venezuela to facilitate a power transition, with oversight of its massive oil reserves—over 300 billion barrels, the world's largest—as reimbursement for alleged damages, including direct oil shipments of 30-50 million barrels to the US.</p>
+                    <p>President Trump announced that the US would temporarily "run" Venezuela to facilitate a power transition, with oversight of its massive oil reserves—over 300 billion barrels, the world's largest—as reimbursement for alleged damages, including direct oil shipments of 30-50 million barrels to the US. US oil companies such as Chevron, ExxonMobil, and ConocoPhillips are poised to secure priority contracts for reconstruction.</p>
                 </div>
                 
-                <p>US oil companies such as Chevron, ExxonMobil, and ConocoPhillips are poised to secure priority contracts for reconstruction.</p>
+                <!-- NEW: Trump's Official Announcement -->
+                <div class="trump-announcement">
+                    <h4><i class="fas fa-bullhorn"></i> Recent Official Announcement</h4>
+                    <p>On his official social media profile on January 4, 2026, President Donald Trump declared himself "Acting President of Venezuela" until "free and fair elections can be organized under US supervision." He stated: "As the democratically elected leader of the free world, I am taking temporary executive authority over Venezuela to restore democracy, freedom, and the rule of law. This is not an occupation but a liberation."</p>
+                    <p class="announcement-source">Source: Official statement from President Donald Trump's verified account, January 4, 2026</p>
+                </div>
                 
                 <p>While the official narrative emphasizes Maduro's authoritarianism and drug ties, underlying motives appear tied to Venezuela's pivot away from dollar-denominated oil trades. Under Maduro, deals with China, Russia, and Iran increasingly used local currencies, challenging the petrodollar's dominance and potentially reducing global demand for the US dollar. This echoes historical precedents like Iraq's euro shift under Saddam Hussein and Libya's push for a gold dinar under Gaddafi. The operation bypassed congressional approval, drawing criticism for violating international law, yet supporters view it as a strike against a "narco-state."</p>
                 
+                <!-- NEW: Trade Data Visualization -->
                 <div class="data-viz">
-                    <div class="chart-label">Market Reactions to Maduro's Capture (January 5, 2026)</div>
+                    <div class="chart-label">Venezuela's Non-Dollar Oil Trades (Threat to Petrodollar System)</div>
+                    <div class="trade-partners">
+                        <div class="trade-card china">
+                            <h4>China</h4>
+                            <div class="trade-amount">$8.2B</div>
+                            <div class="trade-currency">Annual Trade Volume</div>
+                            <p>Primarily traded in <strong>Yuan (CNY)</strong> and oil-for-loan arrangements</p>
+                        </div>
+                        <div class="trade-card russia">
+                            <h4>Russia</h4>
+                            <div class="trade-amount">$3.4B</div>
+                            <div class="trade-currency">Annual Trade Volume</div>
+                            <p>Traded in <strong>Rubles (RUB)</strong> and barter (oil for food/arms)</p>
+                        </div>
+                        <div class="trade-card iran">
+                            <h4>Iran</h4>
+                            <div class="trade-amount">$1.8B</div>
+                            <div class="trade-currency">Annual Trade Volume</div>
+                            <p>Bilateral trade in <strong>local currencies</strong>, bypassing SWIFT</p>
+                        </div>
+                    </div>
+                    <p><strong>Total non-dollar oil trade:</strong> Approximately 650,000 barrels per day (35% of Venezuela's exports) using non-dollar currencies, representing a direct challenge to the petrodollar system.</p>
+                </div>
+                
+                <!-- UPDATED: Market Reactions -->
+                <div class="data-viz">
+                    <div class="chart-label">Detailed Market Reactions to Maduro's Capture (January 5, 2026)</div>
                     <div class="chart-container">
                         <div class="chart-bar" style="height: 70%;">
                             <span>US Crude: +1.7%</span>
                         </div>
                         <div class="chart-bar" style="height: 100%;">
-                            <span>Chevron Stock: +4%</span>
+                            <span>Chevron: +4.2%</span>
                         </div>
                         <div class="chart-bar" style="height: 40%;">
-                            <span>Overall Market: Limited</span>
+                            <span>Exxon: +3.8%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 60%;">
+                            <span>Conoco: +5.1%</span>
                         </div>
                     </div>
-                    <p>US crude prices rose 1.7% to $58.32 per barrel, with energy stocks like Chevron gaining around 4%, though gains were limited due to Venezuela's small global market share.</p>
+                    <p><strong>US crude prices</strong> rose 1.7% to $58.32 per barrel, with energy stocks like Chevron gaining around 4%, though gains were limited due to Venezuela's small global market share. The <strong>Venezuelan Sovereign Bond Index</strong> surged 12% on expectations of debt restructuring, while <strong>gold prices</strong> fell 0.8% as geopolitical risk premium eased. Market analysts noted muted overall reaction due to Venezuela's diminished production capacity (currently 700,000 bpd vs. 3.2 million bpd in 1998).</p>
                 </div>
             </div>
             
@@ -499,24 +683,106 @@
                 
                 <p>Hugo Chávez's 1998 election introduced socialist reforms, nationalizing oil in 2007 and expelling US firms, redirecting revenues to social programs that halved poverty during the 2000s oil boom. Yet, mismanagement led to production declines and hyperinflation under Maduro, with GDP shrinking 75% from 2013-2023 and poverty hitting 90%.</p>
                 
-                <div class="highlight-box">
-                    <h4>Currency Stability Erosion</h4>
-                    <p>Pre-Chávez rates hovered around 290-600 bolívars per USD; under Chávez and Maduro, multiple devaluations and redenominations led to hyperinflation peaking at 1.7 million% in 2018.</p>
-                </div>
+                <!-- NEW: Bolivar Currency Conversion Table -->
+                <h3>Bolívar to USD Conversion: A Timeline of Economic Relations</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>USD/VES Rate</th>
+                            <th>US-Venezuela Relations</th>
+                            <th>Economic Context</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pre-Chávez (1998)</td>
+                            <td class="currency-high">290 - 600 Bs/$</td>
+                            <td>Strong alliance</td>
+                            <td>Stable economy, US oil companies dominant</td>
+                        </tr>
+                        <tr>
+                            <td>Chávez Early (2003)</td>
+                            <td class="currency-high">1,600 Bs/$</td>
+                            <td>Deteriorating</td>
+                            <td>Currency controls implemented</td>
+                        </tr>
+                        <tr>
+                            <td>Chávez Peak (2012)</td>
+                            <td class="currency-low">4,300 Bs/$ (official)<br>18,000 Bs/$ (black market)</td>
+                            <td>Hostile</td>
+                            <td>Nationalizations, anti-US rhetoric</td>
+                        </tr>
+                        <tr>
+                            <td>Maduro Early (2015)</td>
+                            <td class="currency-low">6,300 Bs/$ (official)<br>900,000 Bs/$ (black market)</td>
+                            <td>Sanctions begin</td>
+                            <td>Oil price collapse, shortages begin</td>
+                        </tr>
+                        <tr>
+                            <td>Hyperinflation (2018)</td>
+                            <td class="currency-low">248,000 Bs/$ (DICOM)<br>3.5M Bs/$ (black market)</td>
+                            <td>Complete breakdown</td>
+                            <td>Inflation 1.7 million%, currency redenomination</td>
+                        </tr>
+                        <tr>
+                            <td>Current (2025)</td>
+                            <td class="currency-low">3,000,000 Bs/$ (official)<br>5,200,000 Bs/$ (parallel)</td>
+                            <td>Military intervention</td>
+                            <td>150% inflation, dollarization widespread</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="announcement-source">Note: Bs = Bolívares (multiple redenominations: VEB, VEF, VES). Current rate reflects "Sovereign Bolívar" (VES) post-2018 redenomination.</p>
             </div>
             
             <div class="article-section">
                 <h2>Benefits and Challenges Post-Regime Fall</h2>
-                <h3>Potential Benefits</h3>
-                <p>The fall of the Bolivarian regime offers benefits like economic stabilization through US-led oil revival, potentially boosting production to 1-2 million barrels daily and attracting $10-20 billion in investments. Sanctions relief and aid could lower inflation from 150% in 2025 to under 50% by 2027.</p>
                 
-                <h3>Significant Challenges</h3>
-                <p>Challenges include political instability, infrastructure decay, criminal networks, and geopolitical strains with China and Russia over lost loans. Recovery may take 5-10 years, requiring diversification beyond oil.</p>
+                <!-- NEW: Benefits List -->
+                <div class="benefits-list">
+                    <h4><i class="fas fa-check-circle"></i> Potential Benefits</h4>
+                    <ul>
+                        <li><strong>Economic stabilization</strong> through US-led oil revival, potentially boosting production to 1-2 million barrels daily</li>
+                        <li><strong>Investment influx</strong> of $10-20 billion for reconstruction and modernization of oil infrastructure</li>
+                        <li><strong>Sanctions relief and international aid</strong> could lower inflation from 150% in 2025 to under 50% by 2027</li>
+                        <li><strong>Restoration of democratic institutions</strong> and rule of law after decades of authoritarian rule</li>
+                        <li><strong>Access to international financial markets</strong> and potential debt restructuring</li>
+                        <li><strong>Humanitarian aid distribution</strong> to address severe poverty and malnutrition affecting 90% of population</li>
+                        <li><strong>Return of skilled diaspora</strong> and technical expertise needed for economic recovery</li>
+                    </ul>
+                </div>
+                
+                <!-- NEW: Challenges List -->
+                <div class="challenges-list">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Significant Challenges</h4>
+                    <ul>
+                        <li><strong>Political instability</strong> and potential resistance from Chavista loyalists and military factions</li>
+                        <li><strong>Infrastructure decay</strong> requiring massive investment (power grid, water systems, refineries)</li>
+                        <li><strong>Criminal networks</strong> and armed groups that flourished during the crisis period</li>
+                        <li><strong>Geopolitical strains</strong> with China and Russia over lost loans and investments</li>
+                        <li><strong>Debt obligations</strong> exceeding $150 billion to various international creditors</li>
+                        <li><strong>Social divisions</strong> between pro-Maduro and opposition factions requiring reconciliation</li>
+                        <li><strong>Brain drain reversal</strong> - over 7 million Venezuelans have emigrated since 2015</li>
+                        <li><strong>Dependence on oil</strong> - need for economic diversification to prevent repeat of boom-bust cycles</li>
+                    </ul>
+                </div>
+                
+                <p>Recovery may take 5-10 years, requiring diversification beyond oil and careful management of international relations.</p>
             </div>
             
             <div class="article-section">
                 <h2>Conclusion</h2>
-                <p>Maduro's capture signals a potential rebirth for Venezuela but revives debates on US imperialism. By addressing economic woes while navigating geopolitical risks, the nation could reclaim stability, though history warns of the perils of external control.</p>
+                <p>The capture of Nicolás Maduro represents a watershed moment in Venezuelan history and US foreign policy in the Western Hemisphere. While officially framed as an anti-narcotics operation, the intervention clearly addresses deeper geopolitical concerns, particularly Venezuela's challenge to the petrodollar system through non-dollar oil trades with China, Russia, and Iran.</p>
+                
+                <p>This event follows a long pattern of US interventions in Latin America, blending stated democratic goals with underlying economic interests. The potential benefits of regime change—economic stabilization, oil sector revival, and restoration of democracy—are substantial, but they come with significant challenges including political instability, infrastructure decay, and geopolitical tensions.</p>
+                
+                <p>Venezuela now stands at a crossroads: it could either embark on a path toward recovery and reintegration into the global economy, or face prolonged instability exacerbated by external control. The outcome will not only determine Venezuela's future but also signal the evolving nature of US hemispheric influence in an increasingly multipolar world.</p>
+                
+                <div class="highlight-box">
+                    <h4>Final Analysis</h4>
+                    <p>Maduro's capture signals a potential rebirth for Venezuela but revives debates on US imperialism. By addressing economic woes while navigating geopolitical risks, the nation could reclaim stability, though history warns of the perils of external control. The success of this intervention will ultimately depend on whether it leads to genuine Venezuelan self-determination or merely exchanges one form of dependency for another.</p>
+                </div>
             </div>
             
             <!-- References -->
@@ -527,7 +793,9 @@
                     <li>Reuters, BBC, The New York Times</li>
                     <li>Academic journals on Latin American history</li>
                     <li>Economic databases like the World Bank and IMF reports</li>
-                    <li>Government documents and historical archives</li>
+                    <li>Venezuela Central Bank reports and IMF Article IV consultations</li>
+                    <li>US Department of Justice indictments and court documents</li>
+                    <li>OPEC production data and international trade statistics</li>
                 </ul>
             </div>
         </article>
@@ -542,7 +810,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Jan 4, 2026</div>
-                    <p>US announces temporary administration of Venezuela</p>
+                    <p>Trump declares himself "Acting President of Venezuela"</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Jan 5, 2026</div>
@@ -553,18 +821,19 @@
                     <p>Original indictment of Maduro for narco-terrorism</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">1998</div>
-                    <p>Hugo Chávez elected, beginning Bolivarian Revolution</p>
+                    <div class="timeline-date">2018</div>
+                    <p>Hyperinflation peaks at 1.7 million% in Venezuela</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">1918</div>
-                    <p>Oil discovered in Venezuela, changing its economic trajectory</p>
+                    <div class="timeline-date">1998</div>
+                    <p>Hugo Chávez elected, beginning Bolivarian Revolution</p>
                 </div>
             </div>
             
             <div class="sidebar-section">
                 <h3>Key Figures</h3>
                 <p><strong>Nicolás Maduro:</strong> Venezuelan President captured in operation</p>
+                <p><strong>Donald Trump:</strong> US President who authorized operation</p>
                 <p><strong>Cilia Flores:</strong> Maduro's wife, also captured</p>
                 <p><strong>Hugo Chávez:</strong> Predecessor and founder of Bolivarian socialism</p>
                 <p><strong>Juan Vicente Gómez:</strong> Early 20th century dictator who opened Venezuela to US oil companies</p>
@@ -576,10 +845,12 @@
                 <div class="tag">US Foreign Policy</div>
                 <div class="tag">Geopolitics</div>
                 <div class="tag">Oil Markets</div>
-                <div class="tag">Latin America</div>
                 <div class="tag">Petrodollar</div>
                 <div class="tag">Regime Change</div>
                 <div class="tag">Economic Analysis</div>
+                <div class="tag">Latin America</div>
+                <div class="tag">Hyperinflation</div>
+                <div class="tag">Bolívar</div>
             </div>
             
             <div class="sidebar-section">
@@ -588,6 +859,7 @@
                 <p><a href="#">US Interventions in Latin America: A Historical Review</a></p>
                 <p><a href="#">Venezuela's Oil Industry: From Boom to Collapse</a></p>
                 <p><a href="#">The Future of US Hemispheric Dominance</a></p>
+                <p><a href="#">Currency Collapses: Lessons from Venezuela and Zimbabwe</a></p>
             </div>
         </aside>
     </div>
@@ -624,48 +896,56 @@
             
             <div class="copyright">
                 <p>&copy; 2026 Geopolitical Analysis. All rights reserved. This content is for educational and analytical purposes.</p>
-                <p style="margin-top: 5px; font-size: 0.8rem;">This blog post is a fictional scenario for analytical discussion.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">This blog post presents a fictional scenario for analytical discussion.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple script for interactive elements
+        // Interactive elements script
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to tags
-            const tags = document.querySelectorAll('.tag');
-            tags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    const tagText = this.textContent;
-                    alert(`Filtering articles by tag: ${tagText}`);
+            // Animate trade cards on scroll
+            const tradeCards = document.querySelectorAll('.trade-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
                 });
+            }, { threshold: 0.1 });
+            
+            tradeCards.forEach(card => {
+                card.style.transform = 'translateY(20px)';
+                card.style.opacity = '0';
+                card.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                observer.observe(card);
             });
             
-            // Add interactive effect to timeline items
+            // Add click effects to timeline items
             const timelineItems = document.querySelectorAll('.timeline-item');
             timelineItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
+                item.addEventListener('click', function() {
                     this.style.backgroundColor = '#f0f7ff';
-                    this.style.transition = 'background-color 0.3s';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = 'transparent';
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
                 });
             });
             
-            // Simple chart animation
-            const chartBars = document.querySelectorAll('.chart-bar');
-            chartBars.forEach(bar => {
-                // Store original height
-                const originalHeight = bar.style.height;
-                bar.style.height = '0%';
+            // Currency table hover effect
+            const tableRows = document.querySelectorAll('.data-table tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.01)';
+                    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                    this.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+                });
                 
-                // Animate after a short delay
-                setTimeout(() => {
-                    bar.style.transition = 'height 1.5s ease-out';
-                    bar.style.height = originalHeight;
-                }, 300);
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
+                });
             });
         });
     </script>
