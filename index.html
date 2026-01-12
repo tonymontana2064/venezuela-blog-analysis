@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Capture of Nicolás Maduro: A Turning Point | Geopolitical Analysis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Removed Google Fonts import -->
     <style>
-        /* Base Styles */
+        /* Base Styles with Lighter Colors */
         * {
             margin: 0;
             padding: 0;
@@ -15,25 +15,32 @@
         }
         
         :root {
-            --primary: #1a365d;
-            --secondary: #c53030;
-            --accent: #2d3748;
-            --light: #f7fafc;
-            --gray: #e2e8f0;
-            --dark: #2d3748;
-            --text: #4a5568;
-            --border: #cbd5e0;
+            --primary: #3a7ca5;      /* Softer blue */
+            --secondary: #d9534f;    /* Softer red */
+            --accent: #6c757d;       /* Muted gray */
+            --light: #f8f9fa;        /* Light background */
+            --gray: #e9ecef;         /* Light gray */
+            --dark: #495057;         /* Dark gray for text */
+            --text: #6c757d;         /* Medium gray for text */
+            --border: #dee2e6;       /* Light border */
+            --highlight: #e3f2fd;    /* Very light blue for highlights */
+            --success: #28a745;      /* Green for positive indicators */
+            --warning: #ffc107;      /* Yellow for warnings */
         }
         
         body {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
             color: var(--text);
             line-height: 1.6;
-            font-family: 'Source Sans Pro', sans-serif;
+            /* Global standard font stack */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         
         h1, h2, h3, h4, .logo {
-            font-family: 'Montserrat', sans-serif;
+            /* Same global standard font for headings */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
         }
         
         a {
@@ -52,12 +59,13 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - Lighter */
         .site-header {
-            background-color: var(--primary);
-            color: white;
+            background-color: white;
+            color: var(--dark);
             padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
         }
         
         .header-content {
@@ -69,11 +77,11 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: white;
+            color: var(--primary);
         }
         
         .logo span {
-            color: #e2e8f0;
+            color: var(--accent);
         }
         
         .nav-links {
@@ -82,23 +90,22 @@
         }
         
         .nav-links a {
-            color: white;
+            color: var(--dark);
             font-weight: 500;
         }
         
         .nav-links a:hover {
-            color: #e2e8f0;
+            color: var(--primary);
         }
         
-        /* Hero Section */
+        /* Hero Section - Lighter */
         .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://www.chinausfocus.com/d/file/202511/88c5ae1f0484710ca6d061527d2b3ec9.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
             padding: 80px 0;
             text-align: center;
             margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
         }
         
         .hero h1 {
@@ -108,6 +115,7 @@
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            color: var(--dark);
         }
         
         .meta-info {
@@ -116,7 +124,7 @@
             gap: 30px;
             margin-top: 30px;
             font-size: 0.95rem;
-            opacity: 0.9;
+            color: var(--accent);
         }
         
         /* Main Content */
@@ -131,7 +139,8 @@
             background-color: white;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
         }
         
         .article-section {
@@ -147,32 +156,36 @@
         }
         
         .article-section h3 {
-            color: var(--accent);
+            color: var(--dark);
             margin: 25px 0 15px;
             font-size: 1.4rem;
+            font-weight: 600;
         }
         
         .article-section p {
             margin-bottom: 18px;
             font-size: 1.05rem;
+            color: var(--dark);
         }
         
         .article-section ul, .article-section ol {
             margin-left: 25px;
             margin-bottom: 20px;
+            color: var(--dark);
         }
         
         .article-section li {
             margin-bottom: 8px;
         }
         
-        /* Highlight Box */
+        /* Highlight Box - Lighter */
         .highlight-box {
-            background-color: #f0f7ff;
+            background-color: var(--highlight);
             border-left: 4px solid var(--primary);
             padding: 20px;
             margin: 25px 0;
             border-radius: 0 4px 4px 0;
+            border: 1px solid var(--border);
         }
         
         .highlight-box h4 {
@@ -181,20 +194,18 @@
             font-size: 1.2rem;
         }
         
-        /* New: Trump Announcement Box */
+        /* Trump Announcement Box - Lighter */
         .trump-announcement {
-            background-color: #fff8f8;
-            border-left: 4px solid #c53030;
+            background-color: #fff5f5;
+            border-left: 4px solid var(--secondary);
             padding: 20px;
             margin: 25px 0;
             border-radius: 0 4px 4px 0;
-            border-top: 1px solid #fed7d7;
-            border-right: 1px solid #fed7d7;
-            border-bottom: 1px solid #fed7d7;
+            border: 1px solid #ffe3e3;
         }
         
         .trump-announcement h4 {
-            color: #c53030;
+            color: var(--secondary);
             margin-bottom: 10px;
             font-size: 1.3rem;
             display: flex;
@@ -208,55 +219,58 @@
         
         .announcement-source {
             font-size: 0.9rem;
-            color: #718096;
+            color: var(--accent);
             margin-top: 10px;
             font-style: italic;
         }
         
-        /* Tables */
+        /* Tables - Lighter */
         .data-table {
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.02);
             border-radius: 8px;
             overflow: hidden;
+            border: 1px solid var(--border);
         }
         
         .data-table th {
-            background-color: var(--primary);
-            color: white;
+            background-color: var(--light);
+            color: var(--dark);
             text-align: left;
             font-weight: 600;
             padding: 12px 15px;
+            border-bottom: 2px solid var(--border);
         }
         
         .data-table td {
             padding: 12px 15px;
             border-bottom: 1px solid var(--border);
+            color: var(--dark);
         }
         
         .data-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background-color: var(--light);
         }
         
         .data-table tr:hover {
-            background-color: #e6f7ff;
+            background-color: #f0f8ff;
         }
         
         .currency-high {
-            color: #2e7d32;
+            color: var(--success);
             font-weight: 600;
         }
         
         .currency-low {
-            color: #c62828;
+            color: var(--secondary);
             font-weight: 600;
         }
         
-        /* Chart/Data Visualization */
+        /* Chart/Data Visualization - Lighter */
         .data-viz {
-            background-color: #f8f9fa;
+            background-color: var(--light);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 20px;
@@ -285,7 +299,7 @@
         }
         
         .chart-bar:nth-child(3) {
-            background-color: #2d3748;
+            background-color: var(--accent);
         }
         
         .chart-bar span {
@@ -296,15 +310,16 @@
             text-align: center;
             font-size: 0.9rem;
             font-weight: 600;
+            color: var(--dark);
         }
         
         .chart-label {
             font-weight: 600;
             margin-bottom: 10px;
-            color: var(--primary);
+            color: var(--dark);
         }
         
-        /* Trade Partners Visualization */
+        /* Trade Partners Visualization - Lighter */
         .trade-partners {
             display: flex;
             justify-content: space-around;
@@ -318,49 +333,52 @@
             border-radius: 8px;
             padding: 20px;
             width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             text-align: center;
-            border-top: 4px solid;
+            border: 1px solid var(--border);
         }
         
         .trade-card.china {
-            border-color: #de2910;
+            border-top: 4px solid #de2910;
         }
         
         .trade-card.russia {
-            border-color: #0033a0;
+            border-top: 4px solid #0033a0;
         }
         
         .trade-card.iran {
-            border-color: #239f40;
+            border-top: 4px solid #239f40;
         }
         
         .trade-card h4 {
             margin-bottom: 15px;
             font-size: 1.2rem;
+            color: var(--dark);
         }
         
         .trade-amount {
             font-size: 1.8rem;
             font-weight: 700;
             margin: 10px 0;
+            color: var(--primary);
         }
         
         .trade-currency {
-            color: #718096;
+            color: var(--accent);
             font-size: 0.9rem;
         }
         
-        /* Benefits and Challenges Lists */
+        /* Benefits and Challenges Lists - Lighter */
         .benefits-list, .challenges-list {
-            background-color: #f8f9fa;
+            background-color: var(--light);
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
+            border: 1px solid var(--border);
         }
         
         .benefits-list h4, .challenges-list h4 {
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 15px;
             font-size: 1.3rem;
             display: flex;
@@ -369,11 +387,11 @@
         }
         
         .benefits-list h4 i {
-            color: #2e7d32;
+            color: var(--success);
         }
         
         .challenges-list h4 i {
-            color: #c53030;
+            color: var(--warning);
         }
         
         .benefits-list ul, .challenges-list ul {
@@ -384,11 +402,12 @@
             margin-bottom: 12px;
             padding-left: 5px;
             position: relative;
+            color: var(--dark);
         }
         
         .benefits-list li:before {
             content: "✓";
-            color: #2e7d32;
+            color: var(--success);
             font-weight: bold;
             position: absolute;
             left: -20px;
@@ -398,22 +417,24 @@
             margin-bottom: 12px;
             padding-left: 5px;
             position: relative;
+            color: var(--dark);
         }
         
         .challenges-list li:before {
             content: "⚠";
-            color: #c53030;
+            color: var(--warning);
             font-weight: bold;
             position: absolute;
             left: -20px;
         }
         
-        /* References */
+        /* References - Lighter */
         .references {
-            background-color: #f8f9fa;
+            background-color: var(--light);
             padding: 25px;
             border-radius: 8px;
             margin-top: 40px;
+            border: 1px solid var(--border);
         }
         
         .references h3 {
@@ -430,6 +451,7 @@
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
+            color: var(--dark);
         }
         
         .references li:before {
@@ -439,12 +461,58 @@
             left: 0;
         }
         
-        /* Footer */
+        /* Sidebar - Lighter */
+        .sidebar {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            border: 1px solid var(--border);
+        }
+        
+        /* Footer - Lighter */
         .site-footer {
-            background-color: var(--dark);
-            color: white;
+            background-color: white;
+            color: var(--dark);
             padding: 40px 0 20px;
             margin-top: 60px;
+            border-top: 1px solid var(--border);
         }
         
         .footer-content {
@@ -461,7 +529,7 @@
         }
         
         .footer-section h3 {
-            color: white;
+            color: var(--dark);
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
@@ -469,9 +537,9 @@
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border);
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--accent);
         }
         
         .social-icons {
@@ -481,8 +549,12 @@
         }
         
         .social-icons a {
-            color: white;
+            color: var(--accent);
             font-size: 1.2rem;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary);
         }
         
         /* Responsive Design */
@@ -890,7 +962,7 @@
                 <div class="footer-section">
                     <h3>Newsletter</h3>
                     <p>Subscribe to our weekly analysis newsletter for the latest insights on global affairs.</p>
-                    <p><a href="#" style="color: #e2e8f0; text-decoration: underline;">Subscribe Now →</a></p>
+                    <p><a href="#" style="color: var(--primary); text-decoration: underline;">Subscribe Now →</a></p>
                 </div>
             </div>
             
@@ -926,7 +998,7 @@
             const timelineItems = document.querySelectorAll('.timeline-item');
             timelineItems.forEach(item => {
                 item.addEventListener('click', function() {
-                    this.style.backgroundColor = '#f0f7ff';
+                    this.style.backgroundColor = 'var(--highlight)';
                     setTimeout(() => {
                         this.style.backgroundColor = 'transparent';
                     }, 300);
