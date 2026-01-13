@@ -30,6 +30,7 @@
             color: var(--text);
             line-height: 1.6;
             font-family: 'Source Sans Pro', sans-serif;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4, .logo {
@@ -58,6 +59,8 @@
             color: white;
             padding: 20px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 100;
         }
         
         .header-content {
@@ -181,7 +184,7 @@
             font-size: 1.2rem;
         }
         
-        /* New: Trump Announcement Box */
+        /* Trump Announcement Box */
         .trump-announcement {
             background-color: #fff8f8;
             border-left: 4px solid #c53030;
@@ -286,6 +289,10 @@
         
         .chart-bar:nth-child(3) {
             background-color: #2d3748;
+        }
+        
+        .chart-bar:nth-child(4) {
+            background-color: #4a5568;
         }
         
         .chart-bar span {
@@ -439,6 +446,78 @@
             left: 0;
         }
         
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray);
+            font-size: 1.3rem;
+        }
+        
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: white;
+            padding: 8px 15px;
+            margin: 0 8px 10px 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar-section a {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .sidebar-section a:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-section a:hover {
+            padding-left: 5px;
+            color: var(--secondary);
+        }
+        
         /* Footer */
         .site-footer {
             background-color: var(--dark);
@@ -489,6 +568,7 @@
         @media (max-width: 992px) {
             .main-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             
             .hero h1 {
@@ -498,61 +578,402 @@
             .trade-partners {
                 justify-content: center;
             }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section {
+                width: 100%;
+            }
         }
         
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
             }
             
             .nav-links {
-                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            
+            .nav-links a {
+                padding: 5px 10px;
+                font-size: 0.9rem;
             }
             
             .hero {
-                padding: 50px 0;
+                padding: 40px 20px;
+                margin-bottom: 30px;
             }
             
             .hero h1 {
                 font-size: 1.8rem;
+                line-height: 1.3;
             }
             
             .meta-info {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                font-size: 0.85rem;
             }
             
             .article-content {
-                padding: 25px;
+                padding: 20px;
+                margin: 0 -10px;
+                border-radius: 0;
+                box-shadow: none;
             }
             
+            .article-section {
+                margin-bottom: 30px;
+            }
+            
+            .article-section h2 {
+                font-size: 1.5rem;
+                padding-bottom: 8px;
+            }
+            
+            .article-section h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 12px;
+            }
+            
+            .article-section p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            /* Chart Container Mobile Optimization */
             .chart-container {
                 flex-direction: column;
                 align-items: center;
                 height: auto;
-                gap: 30px;
+                gap: 20px;
+                padding: 15px;
             }
             
             .chart-bar {
-                width: 80%;
+                width: 90%;
                 height: 40px;
                 border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding-left: 15px;
             }
             
             .chart-bar span {
-                bottom: auto;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 10px;
-                width: auto;
-                text-align: left;
+                position: static;
                 color: white;
+                font-size: 0.9rem;
+                transform: none;
+                text-align: left;
+                width: auto;
             }
             
+            /* Trade Partners Mobile Optimization */
+            .trade-partners {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .trade-card {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            /* Table Mobile Optimization */
             .data-table {
                 display: block;
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.9rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 10px 8px;
+                min-width: 120px;
+            }
+            
+            /* Sidebar Mobile Styling */
+            .sidebar {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            
+            .sidebar-section {
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid var(--gray);
+            }
+            
+            .sidebar-section:last-child {
+                border-bottom: none;
+            }
+            
+            .timeline-item {
+                padding: 10px 0;
+                border-bottom: 1px dashed var(--border);
+            }
+            
+            .timeline-date {
+                font-weight: 600;
+                color: var(--primary);
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+            
+            .tag {
+                display: inline-block;
+                background: var(--light);
+                padding: 6px 12px;
+                margin: 0 5px 8px 0;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                border: 1px solid var(--border);
+            }
+            
+            /* Benefits/Challenges Lists Mobile */
+            .benefits-list, .challenges-list {
+                padding: 15px;
+            }
+            
+            .benefits-list h4, .challenges-list h4 {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-list li, .challenges-list li {
+                margin-bottom: 10px;
+                padding-left: 10px;
+            }
+            
+            /* Highlight and Announcement Boxes */
+            .highlight-box, .trump-announcement {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            .trump-announcement h4 {
+                font-size: 1.1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .trump-announcement h4 i {
+                margin-bottom: 5px;
+            }
+            
+            /* Footer Mobile Optimization */
+            .site-footer {
+                padding: 30px 0 15px;
+                margin-top: 40px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .copyright {
+                padding: 15px 20px 0;
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 30px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .article-content {
+                padding: 15px;
+                margin: 0 -15px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 8px;
+            }
+            
+            .nav-links a {
+                font-size: 0.85rem;
+                padding: 4px 8px;
+            }
+            
+            .article-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .article-section h3 {
+                font-size: 1.1rem;
+            }
+            
+            .trade-card {
+                padding: 15px;
+            }
+            
+            .trade-amount {
+                font-size: 1.5rem;
+            }
+            
+            .data-viz {
+                padding: 15px;
+            }
+            
+            .chart-bar {
+                height: 35px;
+                padding-left: 10px;
+            }
+            
+            .chart-bar span {
+                font-size: 0.85rem;
+            }
+            
+            /* Better touch targets for mobile */
+            .timeline-item,
+            .tag,
+            .sidebar-section a,
+            .nav-links a {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+            }
+            
+            .tag {
+                min-height: 36px;
+            }
+            
+            /* Adjust lists for small screens */
+            .article-section ul, 
+            .article-section ol {
+                margin-left: 15px;
+                padding-left: 5px;
+            }
+            
+            .references {
+                padding: 15px;
+            }
+            
+            .references h3 {
+                font-size: 1.2rem;
+            }
+            
+            .meta-info span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .meta-info span i {
+                margin-right: 5px;
+            }
+        }
+        
+        /* iOS Specific Optimizations */
+        @supports (-webkit-touch-callout: none) {
+            .article-content {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            
+            .site-footer {
+                padding-bottom: calc(20px + env(safe-area-inset-bottom));
+            }
+        }
+        
+        /* Android Scrollbar Optimization */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Prevent text size adjustment on orientation change */
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        /* Improve tap highlight color */
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Mobile menu for very small screens */
+        @media (max-width: 360px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+            }
+            
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            
+            .trade-amount {
+                font-size: 1.3rem;
+            }
+            
+            .sidebar-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Landscape mode optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 30px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+            
+            .meta-info {
+                margin-top: 15px;
             }
         }
     </style>
@@ -947,6 +1368,48 @@
                     this.style.boxShadow = 'none';
                 });
             });
+            
+            // Mobile menu enhancement
+            if (window.innerWidth <= 768) {
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('touchstart', function() {
+                        this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                    });
+                    
+                    link.addEventListener('touchend', function() {
+                        this.style.backgroundColor = '';
+                    });
+                });
+            }
+            
+            // Prevent horizontal scroll on mobile
+            document.body.addEventListener('touchmove', function(e) {
+                if (e.touches.length > 1) return;
+                const touch = e.touches[0];
+                const x = touch.clientX;
+                const width = window.innerWidth;
+                if (x < 10 || x > width - 10) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        });
+        
+        // Adjust chart heights on window resize
+        window.addEventListener('resize', function() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            if (window.innerWidth <= 768) {
+                chartBars.forEach(bar => {
+                    bar.style.height = '35px';
+                    bar.style.width = '90%';
+                });
+            } else {
+                chartBars.forEach((bar, index) => {
+                    const heights = [70, 100, 40, 60];
+                    bar.style.height = heights[index] + '%';
+                    bar.style.width = '60px';
+                });
+            }
         });
     </script>
 </body>
